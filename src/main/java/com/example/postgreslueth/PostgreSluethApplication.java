@@ -40,7 +40,7 @@ public class PostgreSluethApplication {
 	String performSql(String SQL) {
 		Span newSpan = this.tracer.nextSpan().name("postgres");
 		try {
-			newSpan.tag("component", "java-sdk");
+			newSpan.tag("component", "java-jdbc");
 			newSpan.tag("db.type", "postgresql");
 			newSpan.tag("db.instance", "localDB");		
 		    List<Map<String, Object>> list;
