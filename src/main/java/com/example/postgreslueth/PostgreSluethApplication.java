@@ -41,6 +41,7 @@ public class PostgreSluethApplication {
 		Span newSpan = this.tracer.nextSpan().name("postgres");
 		try {
 			newSpan.tag("component", "java-jdbc");
+			newSpan.tag("span.kind", "client");
 			newSpan.tag("db.type", "postgresql");
 			newSpan.tag("db.instance", "localDB");		
 		    List<Map<String, Object>> list;
